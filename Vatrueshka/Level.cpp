@@ -34,32 +34,28 @@ void Level::LoadLevel(string fileName, Player& player)
 				player.SetPosition(j, i);
 				cout << j << " : " << i;
 				break;
-			case 'S':
-				_enemies.push_back(Enemy("Snake", tile, 1, 10, 0, 10, 50, 3));
-				_enemies.back().SetPosition(j, i);
-				break;
-			case 'O':
-				_enemies.push_back(Enemy("Ogre", tile, 4, 50, 4, 200, 500, 6));
-				_enemies.back().SetPosition(j, i);
-				break;
-			case 'D':
-				_enemies.push_back(Enemy("Dragon", tile, 100, 2000, 10, 2000, 50000000, 6));
+			case 'E':
+				_enemies.push_back(Enemy("EnemyDef", tile, 1, 10, 0, 10, 50, 3));
 				_enemies.back().SetPosition(j, i);
 				break;
 			case 'B':
-				_items.push_back(Item("Bomb", tile, 100, DamagePack));
-				_items.back().SetPosition(j, i);
+				_enemies.push_back(Enemy("Boss", tile, 100, 2000, 10, 2000, 50000000, 6));
+				_enemies.back().SetPosition(j, i);
 				break;
-			case 'M':
-				_items.push_back(Item("Sword", tile, 5, AttackPack));
+			case 'Q':
+				_items.push_back(Item("Bomb", tile, 100, DamagePack));
 				_items.back().SetPosition(j, i);
 				break;
 			case 'H':
 				_items.push_back(Item("Heal", tile, 10, HealthPack));
 				_items.back().SetPosition(j, i);
+			case 'P':
+				_items.push_back(Item("Potion", tile, 10, AttackPack));
+				_items.back().SetPosition(j, i);
 			default:
 				break;
 			}
+
 		}
 	}
 }
