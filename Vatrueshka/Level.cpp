@@ -6,6 +6,7 @@ Level::Level()
 
 void Level::LoadLevel(string fileName, Player& player)
 {
+	player.Init(1, 100, 5, 20, 10);
 	ifstream file;
 	file.open(fileName);
 	if (file.fail())
@@ -31,12 +32,16 @@ void Level::LoadLevel(string fileName, Player& player)
 			switch (tile)
 			{
 			case '@':
-				player.SetPosition(j, i);
-				cout << j << " : " << i;
+				if (_levelData[i][j+1] != ' ') {
+					player.SetPosition(j, i);
+					cout << j << " : " << i;
+				}
 				break;
 			case 'E':
-				_enemies.push_back(Enemy("EnemyDef", tile, 1, 10, 0, 10, 50, 3));
-				_enemies.back().SetPosition(j, i);
+				if (_levelData[i][j + 1] != ' ') {
+					_enemies.push_back(Enemy("EnemyDef", tile, 1, 10, 0, 10, 50, 3));
+					_enemies.back().SetPosition(j, i);
+				}
 				break;
 			case 'B':
 				_enemies.push_back(Enemy("Boss", tile, 100, 2000, 10, 2000, 50000000, 6));

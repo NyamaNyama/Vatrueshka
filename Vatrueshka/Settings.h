@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <conio.h>
-#include "Hero.h"
+
 #include "Level.h"
 
 using namespace std;
