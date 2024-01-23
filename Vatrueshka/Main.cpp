@@ -9,7 +9,8 @@ using namespace std;
 
 int main()
 {
-	Sett start("MapDraw.txt");
+	Sett start("MapL1.txt");
 	start.PlayGame();
 	return 0;
+
 }

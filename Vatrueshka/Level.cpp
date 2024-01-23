@@ -38,10 +38,6 @@ void Level::LoadLevel(string fileName, Player& player)
 				_enemies.push_back(Enemy("Snake", tile, 1, 10, 0, 10, 50, 3));
 				_enemies.back().SetPosition(j, i);
 				break;
-			case 'g':
-				_enemies.push_back(Enemy("Goblin", tile, 1, 20, 2, 30, 150, 5));
-				_enemies.back().SetPosition(j, i);
-				break;
 			case 'O':
 				_enemies.push_back(Enemy("Ogre", tile, 4, 50, 4, 200, 500, 6));
 				_enemies.back().SetPosition(j, i);
@@ -94,18 +90,6 @@ void Level::PrintLevel(Player& player)
 		case 6:
 			printf("\tExperience: %d/250", player.GetExperience());
 			break;
-		case 8: printf("\tMap legend:");
-			break;
-		case 9: printf("\tPlayer: @\tSnake: S");
-			break;
-		case 10: printf("\tGoblin: g\tOgre: O");
-			break;
-		case 11: printf("\tDragon: D\tBomb: B");
-			break;
-		case 12: printf("\tSword: M\tHeal: H");
-			break;
-		case 13: printf("\tWall: # \tGrass: .");
-			break;
 		}
 		printf("\n");
 	}
@@ -143,10 +127,6 @@ void Level::MovePlayer(char input, Player& player)
 	case 'd':
 	case 'D':
 		ProcessPlayerMove(player, playerX + 1, playerY);
-		break;
-	default:
-		printf("INVALID INPUT! \n");
-		system("pause");
 		break;
 	}
 

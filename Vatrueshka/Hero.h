@@ -8,7 +8,7 @@ class Player
 {
 public:
 	Player();
-	void StartupDialog();
+
 	void EndupDialog();
 	void Init(int level, int health, int attack, int defence, int experience);
 	void SetPosition(int x, int y);
