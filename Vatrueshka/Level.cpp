@@ -6,7 +6,7 @@ Level::Level()
 
 void Level::LoadLevel(string fileName, Player& player)
 {
-	player.Init(1, 100, 5, 20, 10);
+	player.Init(1, 200, 5, 20, 10);
 	ifstream file;
 	file.open(fileName);
 	if (file.fail())
@@ -80,7 +80,7 @@ void Level::PrintLevel(Player& player)
 			printf("\tHealth: %d", player.GetHealth());
 			break;
 		case 3:
-			printf("\tMax attack: %d", player.GetAttack());
+			printf("\tAttack: %d", player.GetAttack());
 			break;
 		case 4:
 			printf("\tDefence: %d", player.GetDefence());
