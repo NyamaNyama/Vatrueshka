@@ -65,3 +65,20 @@ int Player::IncreaseHealth(int health) {
 	_health += health;
 	return health;
 }
+
+void Player::EndupDialog() {
+	char c;
+	system("cls");
+	printf("\n\n\n\t\tGame over :( You have died!\n");
+	printf("\n\t\tYour final stats:\n");
+	printf("\t\tYou have achieved %d level\n", _level);
+	printf("\t\tYou have earned %d experience\n", _experience);
+	printf("\t\tYour attack power was %d\n", _attack);
+	printf("\n\t\tPress \"Esc\" to leave the game!\n");
+	while (true) {
+		c = _getch();
+		if (c == 27) {
+			exit(0);
+		}
+	}
+}
